@@ -8,8 +8,11 @@
  *          export const Promise
  */
 
-export const attachTitle = () => {
+export const attachTitle = (arg) => {
   // Your code goes here...
+  const result = 'DR. ' + arg;
+
+  return result;
 };
 
 /**
@@ -22,7 +25,9 @@ export const attachTitle = () => {
 
 export const getPromise = () => {
   // Your code goes here...
+  return Promise.resolve('MANHATTAN').then(attachTitle).then(console.log);
 };
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

@@ -37,7 +37,7 @@ return Number.isInteger(arg)? myPromise: 0;
 export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
- const myPromise= getPromise(120).then((data) => console.log(data))
+ const myPromise= getPromise(120).then( console.log)
  return 8+sum;
  
 };

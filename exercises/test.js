@@ -5,19 +5,11 @@
  * ```node exercises/test.js```
  */
 
- const getPromise = (arg) => {
-      const myPromise = new Promise((res, rej)=>{
-        res(arg)
-        
-      })
+
+ const handlePromise = () => {
       // Your code goes here...
-    return Number.isInteger(arg)? myPromise: 0;
-     
+      return Promise.reject("REJECTED!")
+        .catch(console.log)
+        .finally(()=>console.log("This promise is finished!"));
     };
- const updateSumValue = () => {
-      // Your code goes here...
-      let sum = 2;
-     getPromise(120).then((data) => console.log(data)) 
-     return sum +8;
-    };
-    console.log(updateSumValue());
+    handlePromise()
