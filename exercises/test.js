@@ -6,10 +6,19 @@
  */
 
 
- const handlePromise = () => {
-      // Your code goes here...
-      return Promise.reject("REJECTED!")
-        .catch(console.log)
-        .finally(()=>console.log("This promise is finished!"));
-    };
-    handlePromise()
+
+const usersUrl = "http://localhost:3000/users/";
+
+const getLoginList = (data) => {
+  // Your code goes here...
+  
+return data.map(element=>element.login)
+}
+const getData = fetch(usersUrl);
+
+const result = getData
+  .then((res) => res.json())
+  .then(data=>getLoginList(data)).then(console.log)
+
+
+ 
