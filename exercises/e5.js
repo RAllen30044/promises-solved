@@ -10,7 +10,7 @@
 
 export const attachTitle = (arg) => {
   // Your code goes here...
-  const result = 'DR. ' + arg;
+  const result = "DR. " + arg;
 
   return result;
 };
@@ -25,9 +25,12 @@ export const attachTitle = (arg) => {
 
 export const getPromise = () => {
   // Your code goes here...
-  return Promise.resolve('MANHATTAN').then(attachTitle).then(console.log);
+  return new Promise((fulfilled) => {
+    fulfilled("MANHATTAN");
+  })
+    .then(attachTitle)
+    .then(console.log);
 };
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

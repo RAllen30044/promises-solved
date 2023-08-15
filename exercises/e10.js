@@ -41,8 +41,7 @@ export const handlePromise1 = Promise.race(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
-export const handlePromise2 =(promiseArr)=>{ 
-  
+export const handlePromise2 = (promiseArr) => {
   return Promise.any(promiseArr);
 };
 /**
@@ -60,9 +59,9 @@ export const handlePromise2 =(promiseArr)=>{
  */
 
 // Your code goes here...
-export const handlePromise3 = promiseArr=>{
-  return Promise.allSettled(promiseArr).catch(e=>e);
-}
+export const handlePromise3 = (promiseArr) => {
+  return Promise.allSettled(promiseArr).catch((e) => e);
+};
 
 /**
  * @task
@@ -72,7 +71,9 @@ export const handlePromise3 = promiseArr=>{
  * The value of newPromiseArr MUST have more than one promise in the array!
  */
 
-export const newPromiseArr = promiseArr.filter(arr=>Promise.allSettled(arr).catch(e=>e));
+export const newPromiseArr = promiseArr.filter((arr) =>
+  Promise.all(arr).catch((e) => e)
+);
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
 export const handlePromise4 = (arr) => {

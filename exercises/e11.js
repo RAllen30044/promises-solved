@@ -29,7 +29,7 @@ export const usersUrl = "http://localhost:3000/users/";
 
 const getLoginList = (data) => {
   // Your code goes here...
-  return data.map((user) => user.login)
+  return data.map((user) => user.login);
 };
 
 /**
@@ -56,11 +56,11 @@ const getData = fetch(usersUrl);
 // Your code goes here ...
 export const result = getData
   .then((res) => res.json())
-  .then(getLoginList).then(data=>{
+  .then(getLoginList)
+  .then((data) => {
     console.log(data);
-    return data
-  })
-
+    return data;
+  });
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

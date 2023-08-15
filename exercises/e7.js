@@ -23,9 +23,12 @@ export function parsePromised(json_string) {
   // Your code goes here...
 
   try {
-    return Promise.resolve(json_string).then(JSON.parse);
-  } catch (reason) {
-    console.log(reason);
+    return new Promise((res, rej) => {
+      res(JSON.parse(json_string));
+      rej((err) => err);
+    });
+  } catch (err) {
+    console.log(err);
   }
 }
 
@@ -55,12 +58,17 @@ export function onReject(error) {
 
 export const handlePromise = (prom) => {
   // Your code goes here...
-return Promise.resolve(prom).catch((res)=>{
-  if(res.message){
-    onReject(res)
-    return;
-  }return res;
-})
+  return new Promise((resolve) => {
+    resolve(prom);
+  })
+    .then((res) => res)
+    .catch((res) => {
+      if ("message" in res) {
+        onReject(res);
+        return;
+      }
+      return res;
+    });
 };
 
 // === TEST YOURSELF ===

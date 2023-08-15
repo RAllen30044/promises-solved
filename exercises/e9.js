@@ -13,7 +13,7 @@
 export function iterate(arg) {
   // Your code goes here...
   console.log(arg);
-  
+
   return arg + 1;
 }
 

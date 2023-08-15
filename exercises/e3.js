@@ -15,12 +15,11 @@
  * Example: export const getPromise(num) => return <Your code of promise>
  */
 export const getPromise = (arg) => {
-  const myPromise = new Promise((res, rej)=>{
-    res(arg)
-  })
+  const myPromise = new Promise((res) => {
+    res(arg);
+  });
   // Your code goes here...
-return Number.isInteger(arg)? myPromise: 0;
- 
+  return Number.isInteger(arg) ? myPromise : 0;
 };
 
 /**
@@ -37,11 +36,10 @@ return Number.isInteger(arg)? myPromise: 0;
 export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
- const myPromise= getPromise(120).then( console.log)
- return 8+sum;
- 
+  getPromise(120).then(console.log);
+  return 8 + sum;
 };
-updateSumValue()
+updateSumValue();
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file

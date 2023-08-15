@@ -16,7 +16,7 @@ return data.map(element=>element.login)
 }
 const getData = fetch(usersUrl);
 
-const result = getData
+ getData
   .then((res) => res.json())
   .then(data=>getLoginList(data)).then(console.log)
 
