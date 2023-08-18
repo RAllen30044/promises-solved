@@ -22,14 +22,13 @@
 export function parsePromised(json_string) {
   // Your code goes here...
 
-  try {
-    return new Promise((res, rej) => {
+  return new Promise((res, rej) => {
+    try {
       res(JSON.parse(json_string));
-      rej((err) => err);
-    });
-  } catch (err) {
-    console.log(err);
-  }
+    } catch (error) {
+      rej(error);
+    }
+  });
 }
 
 /**
@@ -64,8 +63,7 @@ export const handlePromise = (prom) => {
     .then((res) => res)
     .catch((res) => {
       if ("message" in res) {
-        onReject(res);
-        return;
+        return onReject(res);
       }
       return res;
     });

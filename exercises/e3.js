@@ -36,7 +36,7 @@ export const getPromise = (arg) => {
 export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
-  getPromise(120).then(console.log);
+  getPromise(120).then((val) => (sum += val));
   return 8 + sum;
 };
 updateSumValue();

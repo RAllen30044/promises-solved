@@ -24,7 +24,7 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
  */
 
 // Your code goes here...
-export const handlePromise1 = Promise.race(promiseArr).catch((e) => e);
+export const handlePromise1 = Promise.all(promiseArr).catch((e) => e);
 
 /**
  * @task
@@ -60,7 +60,7 @@ export const handlePromise2 = (promiseArr) => {
 
 // Your code goes here...
 export const handlePromise3 = (promiseArr) => {
-  return Promise.allSettled(promiseArr).catch((e) => e);
+  return Promise.allSettled(promiseArr);
 };
 
 /**
@@ -72,7 +72,7 @@ export const handlePromise3 = (promiseArr) => {
  */
 
 export const newPromiseArr = promiseArr.filter((arr) =>
-  Promise.all(arr).catch((e) => e)
+  Promise.race(arr).catch((e) => e)
 );
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
